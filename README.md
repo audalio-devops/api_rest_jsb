@@ -16,6 +16,7 @@ Projeto desenvolvido em Java, durante o curso [Projeto Web API Java Spring Boot]
   - API REST / JSON
   - Banco de Dados MySQL
 
+![](https://github.com/audalio-devops/api_rest_jsb/blob/main/DiagramaProjetoAPIRest.png)
 
 <h2>🚀 Funcionamento</h2>
 
