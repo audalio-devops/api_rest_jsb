@@ -2,11 +2,13 @@ package br.com.ajrdevops.projeto.service;
 
 import br.com.ajrdevops.projeto.model.Usuario;
 import br.com.ajrdevops.projeto.repository.IUsuario;
+import lombok.Data;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 
 @Service
 public class UsuarioService {

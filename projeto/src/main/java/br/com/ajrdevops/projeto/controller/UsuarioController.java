@@ -1,11 +1,10 @@
 package br.com.ajrdevops.projeto.controller;
 
-import br.com.ajrdevops.projeto.repository.IUsuario;
 import br.com.ajrdevops.projeto.model.Usuario;
 import br.com.ajrdevops.projeto.service.UsuarioService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -28,6 +27,7 @@ public class UsuarioController {
     public UsuarioController (UsuarioService usuarioService) {
         this.usuarioService = usuarioService;
     }
+
     @GetMapping
     public ResponseEntity<List<Usuario>> listaUsuarios() {
         return ResponseEntity.status(200).body(usuarioService.listarUsuario());
