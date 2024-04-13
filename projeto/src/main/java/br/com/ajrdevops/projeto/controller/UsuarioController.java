@@ -1,6 +1,8 @@
 package br.com.ajrdevops.projeto.controller;
 
+import br.com.ajrdevops.projeto.dto.UsuarioDto;
 import br.com.ajrdevops.projeto.model.Usuario;
+import br.com.ajrdevops.projeto.security.Token;
 import br.com.ajrdevops.projeto.service.UsuarioService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,12 +51,13 @@ public class UsuarioController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<Usuario> validarSenha(@Valid @RequestBody Usuario usuario) {
-        Boolean valid = usuarioService.validarSenha(usuario);
-        if (!valid) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+    public ResponseEntity<Token> logar(@Valid @RequestBody UsuarioDto usuario) {
+        Token token = usuarioService.gerarToken(usuario);
+
+        if (token != null) {
+            return ResponseEntity.ok(token);
         }
-        return ResponseEntity.status(200).build();
+        return ResponseEntity.status(403).build();
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
