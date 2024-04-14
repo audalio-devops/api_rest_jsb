@@ -4,6 +4,10 @@ const iEmail = document.querySelector(".email")
 const iSenha = document.querySelector(".senha")
 const iTel = document.querySelector(".tel")
 
+const successMessage = document.getElementById('messageSuccess');
+const errorMessage = document.getElementById('messageError');
+
+
 function cadastrar() {
     fetch("http://localhost:8080/usuarios", 
         {
@@ -20,8 +24,14 @@ function cadastrar() {
             })
 
         })
-        .then(function(res) { console.log(res)})
-        .catch(function(res) { console.log(res)})
+        .then(function(res) { 
+            errorMessage.style.display = 'block';
+            console.log(res)
+        })
+        .catch(function(res) { 
+            successMessage.style.display = 'block';
+            console.log(res)
+        })
 }
 
 function limpar() {
@@ -35,7 +45,7 @@ formulario.addEventListener('submit', function(event) {
     event.preventDefault();
 
     cadastrar();
-    limpar();
+    // limpar();
 });
 
 // console.log(formulario)

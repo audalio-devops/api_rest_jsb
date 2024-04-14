@@ -31,3 +31,15 @@ button {
     width: 150px;
     height: 25px;
 }
+
+.messageOk {
+    display: none;
+    color: yellow;
+    background-color: darkblue;
+}
+
+.messageError {
+    display: none;
+    color: red;
+    background-color: yellow;
+}
