@@ -37,4 +37,7 @@ Utilizando o aplicativo Postman ou similar, enviar um POST para o endpoint http:
 Se o usuário for validado, será retornado o Status 200 e o token.
 Para executar as operações do CRUD, será necessário informar, na aba Authorizathion o Type = Bearer e o Token = token retornado ao fazer login.
 
+<h3>Versão Final - Logger</h3>
+Finalizando o projeto, foi adicionada a funcionalidade de Logger e incluso a exibição de logs em alguns métodos da classe de serviços do usuário (UsuarioService)
+
 
